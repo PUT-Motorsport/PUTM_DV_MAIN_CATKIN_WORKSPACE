@@ -17,7 +17,8 @@ RUN apt-get install build-essential cmake -y --no-install-recommends
 RUN apt-get install libboost-all-dev -y
 RUN apt-get install apt-utils can-utils kmod udev net-tools gdb nano ros-noetic-joy -y
 
-# SETUP ON CONTAINER BOOT
+
+# SETUP CONTAINER ON BOOT
 COPY setup_scripts/setup_can.sh /
 COPY setup_scripts/entrypoint.sh /
 RUN chmod +x /setup_can.sh
