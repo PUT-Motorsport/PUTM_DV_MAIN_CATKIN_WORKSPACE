@@ -15,7 +15,7 @@ sleep 5
 cd /home/putm/catkin_ws/
 rm -r *
 mkdir src/
+touch .gitkeep
 catkin_make
-
 
 roscore
