@@ -1,0 +1,13 @@
+version: '3.3'
+services:
+    run:
+        build: .
+        container_name: putm_dv
+        image: putm_dv
+        privileged: true
+        volumes:
+            - '/dev:/dev'
+            - '$PWD/catkin_ws/:/home/putm/catkin_ws'
+            - '/lib/modules:/lib/modules'
+            - '/run/udev:/run/udev:ro'
+        network_mode: host

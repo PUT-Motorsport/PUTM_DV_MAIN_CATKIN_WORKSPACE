@@ -11,7 +11,6 @@ NC='\033[0m'
 NAME="[CAN SETUP]"
 
 
-
 for TTY in /dev/ttyACM* ; do
     VENDOR_ID=$(udevadm info $TTY | grep -oP "ID_VENDOR_ID=\K.*")
     if [ "$CAN_VENDOR_ID" = "$VENDOR_ID" ]; then
@@ -21,7 +20,7 @@ for TTY in /dev/ttyACM* ; do
             break
         fi
     fi
-done
+done 2> /dev/null
 
 if [ -z "$CAN_TTY_PATH" ]; then
     echo -e "${RED}${NAME} USB-CAN is not connected${NC}"
