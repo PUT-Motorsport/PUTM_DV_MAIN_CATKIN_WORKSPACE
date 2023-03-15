@@ -14,8 +14,8 @@ RUN apt-get install apt-utils can-utils kmod udev net-tools gdb nano ros-noetic-
 
 
 # SETUP CONTAINER ON BOOT
-COPY setup_scripts/setup_can.sh /
-COPY setup_scripts/entrypoint.sh /
+COPY /setup_can.sh /
+COPY /entrypoint.sh /
 RUN chmod +x /setup_can.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]

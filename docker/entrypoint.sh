@@ -2,6 +2,8 @@
 
 ./setup_can.sh
 
+sleep 2
+
 # if [ $? -ne 0 ]; then
 #   exit 1
 # fi
