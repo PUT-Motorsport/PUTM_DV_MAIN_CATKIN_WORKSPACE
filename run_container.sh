@@ -1,8 +1,9 @@
 #!/bin/bash
 
+PATH_TO_SHARE_WITH_CONTAINER="/home/mateusz/PUTM_DV_MAIN_CATKIN_WORKSPACE/catkin_ws/"
+
 IMAGE_NAME="putm_dv_main_catkin_workspace"
 CONTAINER_NAME="putm_dv_main_catkin_workspace"
-PATH_TO_SHARE_WITH_CONTAINER="/home/putm/PUTM_DV_MAIN_CATKIN_WORKSPACE/catkin_ws/"
 
 docker build -t $IMAGE_NAME .
 
