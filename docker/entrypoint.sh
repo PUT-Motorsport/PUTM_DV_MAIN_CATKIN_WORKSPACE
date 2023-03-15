@@ -1,8 +1,9 @@
 #!/bin/bash
 
 ./setup_can.sh
+./setup_joy.sh
 
-sleep 2
+sleep 5
 
 # if [ $? -ne 0 ]; then
 #   exit 1

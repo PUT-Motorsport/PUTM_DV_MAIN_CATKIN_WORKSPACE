@@ -14,10 +14,14 @@ RUN apt-get install apt-utils can-utils kmod udev net-tools gdb nano ros-noetic-
 
 
 # SETUP CONTAINER ON BOOT
+COPY /setup_joy.sh /
 COPY /setup_can.sh /
 COPY /entrypoint.sh /
+
+RUN chmod +x /setup_joy.sh
 RUN chmod +x /setup_can.sh
 RUN chmod +x /entrypoint.sh
+
 ENTRYPOINT ["/entrypoint.sh"]
 
 
