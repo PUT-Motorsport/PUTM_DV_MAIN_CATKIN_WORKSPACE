@@ -1,6 +1,6 @@
 version: '3.3'
 services:
-    run:
+    putm_dv:
         build: .
         container_name: putm_dv
         image: putm_dv
