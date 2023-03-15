@@ -7,7 +7,7 @@ This repository allows one to easily develop new ROS features for the PM08 car i
 
 Run:
 ```bash
-cd your/path/PUTM_DV_MAIN_CATKIN_WORKSPACE
+cd /your/path/PUTM_DV_MAIN_CATKIN_WORKSPACE
 sudo ./run_container.sh
 ```
 
