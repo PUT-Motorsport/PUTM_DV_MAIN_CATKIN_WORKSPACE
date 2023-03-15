@@ -7,7 +7,8 @@ This reposytory allows one to easily develop new ROS features for the PM08 car i
 
 Run:
 ```bash
-    sudo ./run_container.sh
+cd [your path]/PUTM_DV_MAIN_CATKIN_WORKSPACE
+sudo ./run_container.sh
 ```
 
 Connect to the container using the "Remote Explorer" extension for VS Code.
