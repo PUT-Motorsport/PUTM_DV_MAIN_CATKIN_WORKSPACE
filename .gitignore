@@ -1,5 +1,5 @@
 # Ignore the "build" and "devel" folder of the catkin_ws
-catkin_ws/
+catkin_ws/*
 ! catkin_ws/src/.gitkeep
 
 # Ignore swp files and other typically unwanted files
