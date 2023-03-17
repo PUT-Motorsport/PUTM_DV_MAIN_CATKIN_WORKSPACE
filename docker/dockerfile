@@ -4,16 +4,26 @@ ENV TZ=Europe/Warsaw
 RUN ln -snf "/usr/share/zoneinfo/$TZ" /etc/localtime
 RUN echo "$TZ" > /etc/timezone
 
-# DEPENDENCIES
+# -----> DEPENDENCIES <-----
 RUN apt-get update
 RUN apt-get install -y tzdata
 RUN apt-get install g++ -y && apt install git -y && apt install vim -y && apt install g++ -y && apt install build-essential -y
 RUN apt-get install build-essential cmake -y --no-install-recommends 
 RUN apt-get install libboost-all-dev -y
-RUN apt-get install apt-utils can-utils kmod udev net-tools gdb nano ros-noetic-joy -y
+RUN apt-get install apt-utils gdb nano -y
+
+# joy
+RUN apt-get install ros-noetic-joy -y
+# can
+RUN apt-get install can-utils kmod udev net-tools -y
+# xsens
+RUN apt-get install ros-noetic-tf2* -y 
+RUN apt-get install sharutils -y
+RUN apt-get install ros-noetic-xacro -y
 
 
-# SETUP CONTAINER ON BOOT
+
+# -----> SETUP CONTAINER ON BOOT <-----
 COPY /setup_joy.sh /
 COPY /setup_can.sh /
 COPY /entrypoint.sh /
