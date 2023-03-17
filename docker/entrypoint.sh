@@ -1,7 +1,6 @@
 #!/bin/bash
 
 echo 'source /home/putm/catkin_ws/devel/setup.bash' >> ~/.bashrc
-echo 'source /opt/ros/noetic/setup.bash' >> ~/.bashrc
 
 source /opt/ros/noetic/setup.bash
 
