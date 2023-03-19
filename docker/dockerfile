@@ -59,6 +59,8 @@ RUN cmake ..
 RUN make
 RUN make install
 
+WORKDIR /
+
 # -----> SETUP CONTAINER ON BOOT <-----
 COPY /setup_joy.sh /
 COPY /setup_can.sh /
