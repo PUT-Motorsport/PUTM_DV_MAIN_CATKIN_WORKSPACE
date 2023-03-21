@@ -12,7 +12,7 @@ RUN apt-get install gdb -y
 # joy
 RUN apt-get install ros-noetic-joy -y
 # can
-RUN apt-get install can-utils kmod udev net-tools -y
+RUN apt-get install can-utils kmod udev net-tools iproute2 -y
 # xsens
 RUN apt-get install ros-noetic-tf2* -y 
 RUN apt-get install sharutils -y
