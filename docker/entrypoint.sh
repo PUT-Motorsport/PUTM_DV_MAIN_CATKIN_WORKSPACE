@@ -1,10 +1,11 @@
 #!/bin/bash
 
-echo "source /home/putm/catkin_ws/devel/setup.bash" >> ~/.bashrc
+echo 'source /home/putm/catkin_ws/devel/setup.bash' >> ~/.bashrc
 source /opt/ros/noetic/setup.bash
 
 ./setup_can.sh
 ./setup_joy.sh
+./detect_xsens.sh
 sleep 3
 # if [ $? -ne 0 ]; then
 #   exit 1

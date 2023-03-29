@@ -26,14 +26,13 @@ if [ -z "$CAN_TTY_PATH" ]; then
     echo -e "${RED}${NAME} USB-CAN is not connected${NC}"
     exit 1
 else
-    echo -e "${GREEN}${NAME} $CAN_TTY_PATH is the USB-CAN dongle${NC}"
+    echo -e "${GREEN}${NAME} USB-CAN is at: $CAN_TTY_PATH${NC}"
     modprobe can
     modprobe can-raw
     modprobe slcan
     
     #link serial interface with a virtual CAN device
     slcand -s8 -o $CAN_TTY_PATH slcan0 
-    #slcand -s8 -o /dev/ttyACM0 slcan0 
     sleep 1
     
     #bring network interface up

@@ -9,10 +9,10 @@ NC='\033[0m'
 NAME="[JOY SETUP]"
 
 if [ -z "$JOY" ]; then
-    echo -e "${RED}${NAME} joystick is not connected${NC}"
+    echo -e "${RED}${NAME} Joy is not connected${NC}"
     exit 1
 else
-    echo -e "${GREEN}${NAME} ${JOY} is connected${NC}"
+    echo -e "${GREEN}${NAME} Joy is at: ${JOY}${NC}"
     sudo chmod a+rw ${JOY}
     exit 0
 fi

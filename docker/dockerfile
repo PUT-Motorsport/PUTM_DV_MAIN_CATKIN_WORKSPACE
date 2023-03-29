@@ -4,24 +4,38 @@ ENV TZ=Europe/Warsaw
 RUN ln -snf "/usr/share/zoneinfo/$TZ" /etc/localtime
 RUN echo "$TZ" > /etc/timezone
 
-# DEPENDENCIES
+# -----> DEPENDENCIES <-----
 RUN apt-get update
+RUN apt-get install nano -y
+RUN apt-get install gdb -y
+
+# joy
+RUN apt-get install ros-noetic-joy -y
+# can
+RUN apt-get install can-utils kmod udev net-tools iproute2 -y
+# xsens
+RUN apt-get install ros-noetic-tf2* -y 
+RUN apt-get install sharutils -y
+RUN apt-get install ros-noetic-xacro -y
+
+# telemetry
 RUN apt-get install -y tzdata
 RUN apt-get install g++ -y && apt install git -y && apt install vim -y && apt install g++ -y && apt install build-essential -y
 RUN apt-get install build-essential cmake -y --no-install-recommends 
 RUN apt-get install libboost-all-dev -y
+<<<<<<< HEAD
 RUN apt-get install apt-utils can-utils kmod udev net-tools gdb nano ros-noetic-joy -y
-RUN apt install ros-noetic-plotjuggler-ros -y
-
-
 
 #Telemetry dependencies
 
 RUN apt-get install libboost-all-dev -y
+=======
+>>>>>>> 1f5ddb4b67882c434651b72f16d875402ab4bf0e
 RUN apt-get install apt-utils libprotobuf-dev -y
 RUN apt-get install curl libssl-dev libcurl4-openssl-dev -y
 RUN apt-get install libfmt-dev -y
 RUN sudo apt-get install -y libsnappy-dev
+<<<<<<< HEAD
 
 RUN git clone https://github.com/jupp0r/prometheus-cpp.git
 WORKDIR prometheus-cpp
@@ -49,15 +63,46 @@ RUN cmake ..
 RUN make
 RUN make install
 
+=======
+>>>>>>> 1f5ddb4b67882c434651b72f16d875402ab4bf0e
 
+RUN git clone https://github.com/jupp0r/prometheus-cpp.git
+WORKDIR /prometheus-cpp
+RUN git submodule init
+RUN git submodule update --recursive
+RUN cmake .. -DBUILD_SHARED_LIBS=ON -DENABLE_PUSH=OFF -DENABLE_COMPRESSION=OFF /prometheus-cpp
+RUN cmake --build .
+RUN cmake --install .
 
-# SETUP CONTAINER ON BOOT
+WORKDIR /
+RUN git clone https://github.com/mircodezorzi/loki-cpp.git
+WORKDIR /loki-cpp
+RUN mkdir build && cd build
+WORKDIR /loki-cpp/build
+RUN cmake .. -DCMAKE_BUILD_TYPE=Release
+RUN cmake --build .
+RUN cmake --install .
+
+WORKDIR /
+RUN git clone https://github.com/fmtlib/fmt.git
+WORKDIR /fmt
+RUN mkdir build && cd build
+WORKDIR /fmt/build
+RUN cmake ..
+RUN make
+RUN make install
+
+WORKDIR /
+
+# -----> SETUP CONTAINER ON BOOT <-----
 COPY /setup_joy.sh /
 COPY /setup_can.sh /
 COPY /entrypoint.sh /
+COPY detect_xsens.sh /
 
 RUN chmod +x /setup_joy.sh
 RUN chmod +x /setup_can.sh
+RUN chmod +x /detect_xsens.sh
 RUN chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
