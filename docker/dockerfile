@@ -23,8 +23,8 @@ RUN apt-get install -y tzdata
 RUN apt-get install g++ -y && apt install git -y && apt install vim -y && apt install g++ -y && apt install build-essential -y
 RUN apt-get install build-essential cmake -y --no-install-recommends 
 RUN apt-get install libboost-all-dev -y
-<<<<<<< HEAD
 RUN apt-get install apt-utils can-utils kmod udev net-tools gdb nano ros-noetic-joy -y
+RUN apt install ros-noetic-plotjuggler-ros
 
 #Telemetry dependencies
 
