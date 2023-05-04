@@ -11,3 +11,4 @@ services:
             - '/lib/modules:/lib/modules'
             - '/run/udev:/run/udev:ro'
         network_mode: host
+        restart: always
