@@ -1,6 +1,9 @@
 # Ignore the "build" and "devel" folder of the catkin_ws
 
 catkin_ws/*
+!catkin_ws/launch/
+catkin_ws/launch/*
+!catkin_ws/launch/main.launch
 !catkin_ws/src/
 catkin_ws/src/*
 !catkin_ws/src/.gitkeep
