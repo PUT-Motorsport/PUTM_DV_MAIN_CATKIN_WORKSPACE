@@ -3,7 +3,8 @@
 ################## DO NOT TOUCH ##################
 echo 'source /opt/ros/noetic/setup.bash' >> ~/.bashrc
 echo 'source /home/putm/catkin_ws/devel/setup.bash' >> ~/.bashrc
-./setup_can.sh
+#./setup_can.sh
+./setup_kvaser.sh
 ./setup_joy.sh
 ./detect_xsens.sh
 sleep 2
@@ -17,4 +18,5 @@ source devel/setup.bash
 
 echo -e "\033[0;32m---> CONTAINER IS READY <---\033[0m"
 roslaunch launch/main.launch
+roscore
 ##################################################

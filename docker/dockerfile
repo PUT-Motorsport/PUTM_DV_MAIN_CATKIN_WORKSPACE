@@ -62,11 +62,13 @@ WORKDIR /
 # -----> SETUP CONTAINER ON BOOT <-----
 COPY /setup_joy.sh /
 COPY /setup_can.sh /
+COPY /setup_kvaser.sh /
 COPY /entrypoint.sh /
 COPY detect_xsens.sh /
 
 RUN chmod +x /setup_joy.sh
 RUN chmod +x /setup_can.sh
+RUN chmod +x /setup_kvaser.sh
 RUN chmod +x /detect_xsens.sh
 RUN chmod +x /entrypoint.sh
 
