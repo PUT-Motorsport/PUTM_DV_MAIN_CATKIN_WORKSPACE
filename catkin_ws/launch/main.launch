@@ -1,9 +1,3 @@
-<launch>
-        <node  name="xsens_mti_node" pkg="xsens_mti_driver" type="xsens_mti_node" output="screen">
-            <rosparam command="load" file="$(find xsens_mti_driver)/param/xsens_mti_node.yaml" />
-        </node>
-        <node name="ROS_Telemetry_node"   pkg="ROS_Telemetry"   type="ROS_Telemetry_node"   output="screen" /> 
+<launch> 
         <node name="PUTM_EV_ROS2CAN_node" pkg="PUTM_EV_ROS2CAN" type="PUTM_EV_ROS2CAN_node" output="screen"/>
-        <node pkg="foxglove_bridge" type="foxglove_bridge_node" name="foxglove_bridge">
 </launch>
-        <!-- <node name="rosbag_node" pkg="rosbag" type="record" args="record -o /home/putm/catkin_ws/rosbag -a --split --duration=2m"/> -->
