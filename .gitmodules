@@ -4,3 +4,6 @@
 [submodule "catkin_ws/src/PUTM_DV_TRACTION_CONTROL_DRIVER"]
 	path = catkin_ws/src/PUTM_DV_TRACTION_CONTROL_DRIVER
 	url = git@github.com:PUT-Motorsport/PUTM_DV_TRACTION_CONTROL_DRIVER.git
+[submodule "catkin_ws/src/PUTM_DV_XSENS"]
+	path = catkin_ws/src/PUTM_DV_XSENS
+	url = git@github.com:PUT-Motorsport/PUTM_DV_XSENS.git
