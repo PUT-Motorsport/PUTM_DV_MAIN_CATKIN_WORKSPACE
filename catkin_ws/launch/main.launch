@@ -1,3 +1,4 @@
 <launch> 
-        <node name="PUTM_EV_ROS2CAN_node" pkg="PUTM_EV_ROS2CAN" type="PUTM_EV_ROS2CAN_node" output="screen"/>
+        <node name="putm_dv_can_to_ros_node" pkg="putm_dv_can_to_ros" type="putm_dv_can_to_ros_node" output="screen"/>
+        <node name="putm_dv_traction_control_driver_node" pkg="putm_dv_traction_control_driver" type="putm_dv_traction_control_driver_node" output="screen"/>
 </launch>
