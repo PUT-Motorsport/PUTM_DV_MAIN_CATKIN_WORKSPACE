@@ -1,0 +1,3 @@
+[submodule "catkin_ws/src/PUTM_DV_CAN_TO_ROS"]
+	path = catkin_ws/src/PUTM_DV_CAN_TO_ROS
+	url = git@github.com:PUT-Motorsport/PUTM_DV_CAN_TO_ROS.git
