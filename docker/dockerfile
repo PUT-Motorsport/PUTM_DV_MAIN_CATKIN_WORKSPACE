@@ -5,7 +5,7 @@ RUN ln -snf "/usr/share/zoneinfo/$TZ" /etc/localtime
 RUN echo "$TZ" > /etc/timezone
 
 # -----> DEPENDENCIES <-----
-RUN apt-get update --fix-missing
+RUN apt-get -y update --fix-missing
 RUN apt-get upgrade -y
 RUN apt-get install nano -y
 RUN apt-get install gdb -y
