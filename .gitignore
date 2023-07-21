@@ -2,7 +2,7 @@
 
 catkin_ws/build/*
 catkin_ws/devel/*
-catkin_ws/.vscode/*
+.vscode
 
 # Ignore swp files and other typically unwanted files
 *.swp
