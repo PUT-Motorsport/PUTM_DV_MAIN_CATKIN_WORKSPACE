@@ -7,3 +7,9 @@
 [submodule "catkin_ws/src/PUTM_DV_XSENS"]
 	path = catkin_ws/src/PUTM_DV_XSENS
 	url = git@github.com:PUT-Motorsport/PUTM_DV_XSENS.git
+[submodule "catkin_ws/src/PUTM_DV_STEERING_COLUMN_CONTROLLER"]
+	path = catkin_ws/src/PUTM_DV_STEERING_COLUMN_CONTROLLER
+	url = git@github.com:PUT-Motorsport/PUTM_DV_MAIN_CATKIN_WORKSPACE.git
+[submodule "catkin_ws/src/PUTM_ROSBAG_RECORDER"]
+	path = catkin_ws/src/PUTM_ROSBAG_RECORDER
+	url = git@github.com:PUT-Motorsport/PUTM_ROSBAG_RECORDER.git

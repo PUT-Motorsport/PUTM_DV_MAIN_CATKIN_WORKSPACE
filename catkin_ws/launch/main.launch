@@ -1,11 +1,11 @@
 <launch> 
         <node name="putm_dv_can_to_ros_node" pkg="putm_dv_can_to_ros" type="putm_dv_can_to_ros_node" output="screen"/>
-        
         <node name="putm_dv_traction_control_driver_node" pkg="putm_dv_traction_control_driver" type="putm_dv_traction_control_driver_node" output="screen"/>
-        
         <node  name="xsens_mti_node" pkg="xsens_mti_driver" type="xsens_mti_node" output="screen">
             <rosparam command="load" file="$(find xsens_mti_driver)/param/xsens_mti_node.yaml" />
         </node>
-
-        
+        <include file="$(find foxglove_bridge)/launch/foxglove_bridge.launch" />
+        <arg name="port" value="8765" />
+        <node name="steering_node" pkg="steering" type="steering_node" output="screen" />
+        <node name="joy_node" pkg="joy" type="joy_node" output="screen" />
 </launch>
