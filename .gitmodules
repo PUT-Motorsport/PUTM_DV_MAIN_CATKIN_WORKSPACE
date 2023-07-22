@@ -13,3 +13,6 @@
 [submodule "catkin_ws/src/PUTM_ROSBAG_RECORDER"]
 	path = catkin_ws/src/PUTM_ROSBAG_RECORDER
 	url = git@github.com:PUT-Motorsport/PUTM_ROSBAG_RECORDER.git
+[submodule "catkin_ws/src/PUTM_EV_ROS_TELEMETRY_2023"]
+	path = catkin_ws/src/PUTM_EV_ROS_TELEMETRY_2023
+	url = git@github.com:PUT-Motorsport/PUTM_EV_ROS_TELEMETRY_2023.git

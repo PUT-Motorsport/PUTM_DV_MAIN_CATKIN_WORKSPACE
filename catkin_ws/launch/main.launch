@@ -1,5 +1,6 @@
 <launch> 
         <node name="putm_dv_can_to_ros_node" pkg="putm_dv_can_to_ros" type="putm_dv_can_to_ros_node" output="screen"/>
+        <node name="putm_recorder_node" pkg="putm_recorder" type="putm_recorder_node" output="screen" />
         <node name="putm_dv_traction_control_driver_node" pkg="putm_dv_traction_control_driver" type="putm_dv_traction_control_driver_node" output="screen"/>
         <node  name="xsens_mti_node" pkg="xsens_mti_driver" type="xsens_mti_node" output="screen">
             <rosparam command="load" file="$(find xsens_mti_driver)/param/xsens_mti_node.yaml" />
